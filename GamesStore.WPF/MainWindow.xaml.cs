@@ -1,4 +1,6 @@
 ﻿using GamesStore.DAL;
+using GamesStore.DAL.Entities;
+using GamesStore.DAL.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,8 @@ namespace GamesStore.WPF
         {
             InitializeComponent();
             GamesStoreContext gamesStoreContext = new GamesStoreContext();
+            Repository<Game> repository = new Repository<Game>(gamesStoreContext);
+            IEnumerable <Game> list = repository.GetAll();
         }
     }
 }

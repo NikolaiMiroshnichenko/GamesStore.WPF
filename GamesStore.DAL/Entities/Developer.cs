@@ -4,9 +4,8 @@ using System.Text;
 
 namespace GamesStore.DAL.Entities
 {
-    public class Developer
+    public class Developer: Entity
     {
-        public int Id { get; set; }
         public string Name { get; set; }
         public int YearOfFoundation { get; set; }
         public string Discription { get; set; }

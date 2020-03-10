@@ -5,10 +5,8 @@ using System.Text;
 
 namespace GamesStore.DAL.Entities
 {
-    public class Game
+    public class Game: Entity
     {
-        [Key]
-        public int Id { get; set; }
         public string Title { get; set; }
         public double Price { get; set; }
         public Developer Developer { get; set; }
