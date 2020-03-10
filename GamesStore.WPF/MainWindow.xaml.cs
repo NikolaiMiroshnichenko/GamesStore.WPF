@@ -27,8 +27,37 @@ namespace GamesStore.WPF
         {
             InitializeComponent();
             GamesStoreContext gamesStoreContext = new GamesStoreContext();
+            
+            List<Game> games = new List<Game>();
+            Developer developer = new Developer
+            {
+                Discription = "Some discr",
+                Games = games,
+                Name = "Blizzard",
+                YearOfFoundation = 1996
+            };
+            Game game1 = new Game
+            {
+                Developer = developer,
+                Discription = "The bestt MMO with pandas for you",
+                Title = "World of PandaCraft",
+                Genre = "MMO",
+                Price = 20
+            };
+            games.Add(game1);
+            Game game2 = new Game
+            {
+                Developer = developer,
+                Discription = "The bestt MMO with pandas for you with new addons",
+                Title = "World of PandaCraft",
+                Genre = "MMO",
+                Price = 30
+            };
+
             Repository<Game> repository = new Repository<Game>(gamesStoreContext);
-            IEnumerable <Game> list = repository.GetAll();
+            repository.Create(game1);
+            IEnumerable<Game> list = repository.GetAll();
+            //repository.Update(game2);
         }
     }
 }
