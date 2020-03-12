@@ -39,7 +39,7 @@ namespace GamesStore.WPF
             Game game1 = new Game
             {
                 Developer = developer,
-                Discription = "The bestt MMO with pandas for you",
+                Discription = "The best MMO with pandas for you",
                 Title = "World of PandaCraft",
                 Genre = "MMO",
                 Price = 20
@@ -47,6 +47,7 @@ namespace GamesStore.WPF
             games.Add(game1);
             Game game2 = new Game
             {
+                Id = 1,
                 Developer = developer,
                 Discription = "The bestt MMO with pandas for you with new addons",
                 Title = "World of PandaCraft",
@@ -58,6 +59,8 @@ namespace GamesStore.WPF
             repository.Create(game1);
             IEnumerable<Game> list = repository.GetAll();
             //repository.Update(game2);
+            //repository.Delete(3);
+            repository.SaveChanges();
         }
     }
 }
