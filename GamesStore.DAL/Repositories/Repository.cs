@@ -25,6 +25,10 @@ namespace GamesStore.DAL.Repositories
         {
             return _context.Set<TEntity>().Find(id);
         }
+        public IEnumerable<TEntity> GetByCondition(Func<TEntity, bool> func )
+        {
+            return _context.Set<TEntity>().Where(func);
+        }
         public void Create(TEntity entity)
         {
             _context.Set<TEntity>().Add(entity);

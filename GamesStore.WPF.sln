@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{0A945EA4-1
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GamesStore.DAL", "GamesStore.DAL\GamesStore.DAL.csproj", "{A77E7CB6-019F-4164-826E-4908244ED795}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Buisnes Logic", "Buisnes Logic", "{E693BAE1-8FE9-4C20-AC74-E5235D29615C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Business Logic", "Business Logic", "{E693BAE1-8FE9-4C20-AC74-E5235D29615C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services", "Services\Services.csproj", "{618CB4A5-2AF0-45FF-8EFC-E8C0DFC0F61D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Services", "Services\Services.csproj", "{618CB4A5-2AF0-45FF-8EFC-E8C0DFC0F61D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

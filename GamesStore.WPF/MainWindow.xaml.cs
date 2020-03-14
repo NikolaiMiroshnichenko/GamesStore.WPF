@@ -1,6 +1,7 @@
 ﻿using GamesStore.DAL;
 using GamesStore.DAL.Entities;
 using GamesStore.DAL.Repositories;
+using Services.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,22 +46,26 @@ namespace GamesStore.WPF
                 Price = 20
             };
             games.Add(game1);
-            Game game2 = new Game
+           /* Game game2 = new Game
             {
-                Id = 1,
                 Developer = developer,
                 Discription = "The bestt MMO with pandas for you with new addons",
                 Title = "World of PandaCraft",
                 Genre = "MMO",
                 Price = 30
-            };
+            };*/
 
             Repository<Game> repository = new Repository<Game>(gamesStoreContext);
-            repository.Create(game1);
-            IEnumerable<Game> list = repository.GetAll();
-            //repository.Update(game2);
+            /*//repository.Create(game1);
+            //IEnumerable<Game> list = repository.GetAll();
+            var game3 = repository.GetById(1);
+            game3.Discription = "The bestt MMO with pandas for you with new addons";
+            repository.Update(game3);
             //repository.Delete(3);
-            repository.SaveChanges();
+            repository.SaveChanges();*/
+            var list = repository.GetAll();
+            GameService gameService = new GameService(repository);
+            var someGame = gameService.GetByCondition((x => x.Price == 20));
         }
     }
 }

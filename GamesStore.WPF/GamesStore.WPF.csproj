@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\GamesStore.DAL\GamesStore.DAL.csproj" />
+    <ProjectReference Include="..\Services\Services.csproj" />
   </ItemGroup>
 
 </Project>
