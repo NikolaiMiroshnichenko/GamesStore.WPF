@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GamesStore.DAL.Entities
+﻿namespace GamesStore.DAL.Entities
 {
     public abstract class Entity
     {

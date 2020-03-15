@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace GamesStore.DAL.Entities
 {
@@ -8,7 +6,7 @@ namespace GamesStore.DAL.Entities
     {
         public string Name { get; set; }
         public int YearOfFoundation { get; set; }
-        public string Discription { get; set; }
+        public string Description { get; set; }
         public ICollection<Game> Games { get; set; }
     }
 }

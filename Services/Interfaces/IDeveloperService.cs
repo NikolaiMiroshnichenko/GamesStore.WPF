@@ -1,16 +1,15 @@
-﻿using GamesStore.DAL.Entities;
+﻿using Services.Dto;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Services.Interfaces
 {
     public interface IDeveloperService
     {
-        IEnumerable<Developer> GetAll();
-        IEnumerable<Developer> GetByCondition(Func<Developer, bool> filter);
-        void Create(Developer developer);
-        void Update(Developer developer);
+        IEnumerable<DeveloperDto> GetAll();
+        IEnumerable<DeveloperDto> GetByCondition(Func<DeveloperDto, bool> filter);
+        void Create(DeveloperDto developer);
+        void Update(DeveloperDto developer);
         void Delete(int id);
     }
 }

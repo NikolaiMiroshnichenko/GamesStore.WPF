@@ -1,9 +1,10 @@
 ﻿using GamesStore.DAL.Entities;
 using GamesStore.DAL.Repositories;
+using Services.Dto;
+using Services.Extensions;
 using Services.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Services.Classes
 {
@@ -15,26 +16,28 @@ namespace Services.Classes
             _repository = repository;
         }
 
-        public IEnumerable<Developer> GetAll()
+        public IEnumerable<DeveloperDto> GetAll()
         {
-            return _repository.GetAll();
+            return _repository.GetAll().ToDtoCollection();
         }
-        public IEnumerable<Developer> GetByCondition(Func<Developer, bool> filter)
+        public IEnumerable<DeveloperDto> GetByCondition(Func<DeveloperDto, bool> filter)
         {
             return _repository.GetByCondition(filter);
         }
-        public void Create(Developer developer)
+        public void Create(DeveloperDto developer)
         {
-            _repository.Create(developer);
-
+            _repository.Create(developer.ToEntity());
+            _repository.SaveChanges();
         }
-        public void Update(Developer developer)
+        public void Update(DeveloperDto developer)
         {
-            _repository.Update(developer);
+            _repository.Update(developer.ToEntity());
+            _repository.SaveChanges();
         }
         public void Delete(int id)
         {
             _repository.Delete(id);
+            _repository.SaveChanges();
         }
     }
 }
