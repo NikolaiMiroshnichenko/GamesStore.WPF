@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GamesStore.WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" 
+        Height="450" 
+        Width="800"
+        Background="{StaticResource MainWindowBackground}">
     <Grid>
-
+        <ListView x:Name="GamesListView"
+                  Height="450" 
+                  Width="800"
+                  Background="{StaticResource MainWindowBackground}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Title}">Title</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">Price</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Genre}">Genre</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Desription}">Description</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>

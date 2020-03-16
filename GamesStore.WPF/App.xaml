@@ -4,6 +4,8 @@
              xmlns:local="clr-namespace:GamesStore.WPF"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <SolidColorBrush Color="#253968" x:Key="MainWindowBackground"/>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

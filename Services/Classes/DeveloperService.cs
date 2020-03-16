@@ -5,6 +5,7 @@ using Services.Extensions;
 using Services.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Services.Classes
 {
@@ -20,9 +21,9 @@ namespace Services.Classes
         {
             return _repository.GetAll().ToDtoCollection();
         }
-        public IEnumerable<DeveloperDto> GetByCondition(Func<DeveloperDto, bool> filter)
+        public IEnumerable<DeveloperDto> GetByCondition(string name)
         {
-            return _repository.GetByCondition(filter);
+            return _repository.GetAll().Where(x => x.Name.Equals(name)).ToDtoCollection();
         }
         public void Create(DeveloperDto developer)
         {

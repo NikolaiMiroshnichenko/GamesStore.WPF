@@ -6,6 +6,10 @@ namespace Services.Dto
 {
     public class DeveloperDto
     {
+        public DeveloperDto()
+        {
+            Games = new List<GameDto>();
+        }
         public int Id { get; set; }
         public string Name { get; set; }
         public int YearOfFoundation { get; set; }

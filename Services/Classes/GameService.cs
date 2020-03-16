@@ -5,6 +5,7 @@ using GamesStore.DAL.Repositories;
 using Services.Dto;
 using Services.Interfaces;
 using Services.Extensions;
+using System.Linq;
 
 namespace Services.Classes
 {
@@ -20,9 +21,9 @@ namespace Services.Classes
         {
             return _repository.GetAll().ToDtoCollection();
         }
-        public IEnumerable<GameDto> GetByCondition(Func<GameDto, bool> filter)
+        public IEnumerable<GameDto> GetByCondition(string name)
         {
-            return _repository.GetByCondition(filter);
+            return _repository.GetAll().Where(x => x.Title.Equals(name)).ToDtoCollection();
         }
         public void Create(GameDto game)
         {

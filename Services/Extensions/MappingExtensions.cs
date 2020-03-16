@@ -1,6 +1,7 @@
 ﻿using GamesStore.DAL.Entities;
 using Services.Dto;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Services.Extensions
 {
@@ -11,7 +12,7 @@ namespace Services.Extensions
             Game game = new Game
             {
                 Id = dto.Id,
-                Developer = dto.DeveloperDto.ToEntity(),
+               // Developer = dto.DeveloperDto.ToEntity(),
                 Genre = dto.Genre,
                 Description = dto.Genre,
                 Price = dto.Price,
@@ -27,7 +28,7 @@ namespace Services.Extensions
                 Name = dto.Name,
                 Description = dto.Description,
                 YearOfFoundation = dto.YearOfFoundation,
-                Games = (List<Game>) dto.Games.ToDtoCollection()
+                Games = dto.Games.ToEntityCollection().ToList()
             };
             return developer;
         }
@@ -36,7 +37,7 @@ namespace Services.Extensions
             GameDto gameDto = new GameDto
             {
                 Id = entity.Id,
-                DeveloperDto = entity.Developer.ToDto(),
+               // DeveloperDto = entity.Developer.ToDto(),
                 Genre = entity.Genre,
                 Description = entity.Genre,
                 Price = entity.Price,
@@ -52,25 +53,25 @@ namespace Services.Extensions
                 Name = entity.Name,
                 Description = entity.Description,
                 YearOfFoundation = entity.YearOfFoundation,
-                Games = (List <GameDto>)entity.Games.ToDtoCollection()
+                Games = entity.Games.ToDtoCollection().ToList()
             };
             return developerDto;
         }
-        public static IEnumerable <Game> ToDtoCollection(this IEnumerable<GameDto> dtos)
+        public static IEnumerable <Game> ToEntityCollection(this IEnumerable<GameDto> dtos)
         {
             var entityCollection = new List <Game>();
             foreach (var item in dtos)
             {
-                item.ToEntity();
+                entityCollection.Add(item.ToEntity());
             }
             return entityCollection;
         }
-        public static IEnumerable<Developer> ToDtoCollection(this IEnumerable<DeveloperDto> dtos)
+        public static IEnumerable<Developer> ToEntityCollection(this IEnumerable<DeveloperDto> dtos)
         {
             var entityCollection = new List<Developer>();
             foreach (var item in dtos)
             {
-                item.ToEntity();
+                entityCollection.Add(item.ToEntity());
             }
             return entityCollection;
         }
@@ -79,7 +80,7 @@ namespace Services.Extensions
             var dtoCollection = new List<GameDto>();
             foreach (var item in entities)
             {
-                item.ToDto();
+                dtoCollection.Add(item.ToDto());
             }
             return dtoCollection;
         }
@@ -88,7 +89,7 @@ namespace Services.Extensions
             var dtoCollection = new List<DeveloperDto>();
             foreach (var item in entities)
             {
-                item.ToDto();
+                dtoCollection.Add(item.ToDto());
             }
             return dtoCollection;
         }

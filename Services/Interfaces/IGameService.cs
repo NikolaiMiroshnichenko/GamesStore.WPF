@@ -7,7 +7,7 @@ namespace Services.Interfaces
     public interface IGameService
     {
         IEnumerable<GameDto> GetAll();
-        IEnumerable<GameDto> GetByCondition(Func<GameDto, bool> filter);
+        IEnumerable<GameDto> GetByCondition(string name);
         void Create(GameDto game);
         void Update(GameDto game);
         void Delete(int id);
