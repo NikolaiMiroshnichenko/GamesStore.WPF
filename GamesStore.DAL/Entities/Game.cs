@@ -7,5 +7,6 @@
         public Developer Developer { get; set; }
         public string Genre { get; set; }
         public string Description { get; set; }
+        public string ImageURL { get; set; }
     }
 }

@@ -12,11 +12,12 @@ namespace Services.Extensions
             Game game = new Game
             {
                 Id = dto.Id,
-               // Developer = dto.DeveloperDto.ToEntity(),
+                // Developer = dto.DeveloperDto.ToEntity(),
                 Genre = dto.Genre,
                 Description = dto.Genre,
                 Price = dto.Price,
-                Title = dto.Title
+                Title = dto.Title,
+                ImageURL = dto.ImageURL
             };
             return game;
         }
@@ -41,7 +42,8 @@ namespace Services.Extensions
                 Genre = entity.Genre,
                 Description = entity.Genre,
                 Price = entity.Price,
-                Title = entity.Title
+                Title = entity.Title,
+                ImageURL = entity.ImageURL
             };
             return gameDto;
         }

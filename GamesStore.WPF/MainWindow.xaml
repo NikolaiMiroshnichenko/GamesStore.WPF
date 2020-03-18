@@ -10,18 +10,23 @@
         Width="800"
         Background="{StaticResource MainWindowBackground}">
     <Grid>
-        <ListView x:Name="GamesListView"
+        <ListBox x:Name="GamesListView"
                   Height="450" 
                   Width="800"
-                  Background="{StaticResource MainWindowBackground}">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Title}">Title</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Price}">Price</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Genre}">Genre</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=Desription}">Description</GridViewColumn>
-                </GridView>
-            </ListView.View>
-        </ListView>
+                  Background="{StaticResource MainWindowBackground}"
+                  Foreground="White">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5"
+                                Orientation="Horizontal">
+                        <Image Width="150" Height="150" Source="{Binding Path=ImageURL}" />
+                        <TextBlock FontSize="16" Margin="10" Text="{Binding Path=Title}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="16" Margin="10" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="16" Margin="10" Text="{Binding Path=Genre}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="16" Margin="10" Text="{Binding Path=Description}" HorizontalAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

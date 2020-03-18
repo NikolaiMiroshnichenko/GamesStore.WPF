@@ -12,5 +12,6 @@ namespace Services.Dto
         public string Genre { get; set; }
         public string Description { get; set; }
         public DeveloperDto DeveloperDto { get; set; }
+        public string ImageURL { get; set; }
     }
 }
