@@ -14,7 +14,7 @@ namespace Services.Extensions
                 Id = dto.Id,
                 // Developer = dto.DeveloperDto.ToEntity(),
                 Genre = dto.Genre,
-                Description = dto.Genre,
+                Description = dto.Description,
                 Price = dto.Price,
                 Title = dto.Title,
                 ImageURL = dto.ImageURL
@@ -40,7 +40,7 @@ namespace Services.Extensions
                 Id = entity.Id,
                // DeveloperDto = entity.Developer.ToDto(),
                 Genre = entity.Genre,
-                Description = entity.Genre,
+                Description = entity.Description,
                 Price = entity.Price,
                 Title = entity.Title,
                 ImageURL = entity.ImageURL
