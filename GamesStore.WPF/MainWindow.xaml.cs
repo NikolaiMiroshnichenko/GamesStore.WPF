@@ -21,7 +21,11 @@ namespace GamesStore.WPF
             var gameService = new GameService(gameRepository);
             var list = gameService.GetAll();
             GamesListView.ItemsSource = list;
-
+        }
+        private void ButtonClicked(object sender, RoutedEventArgs e)
+        {
+            SubWindow subWindow = new SubWindow();
+            subWindow.Show();
         }
     }
 }

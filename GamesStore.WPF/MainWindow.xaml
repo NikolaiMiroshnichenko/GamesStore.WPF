@@ -10,26 +10,19 @@
         Width="800"
         Background="{StaticResource MainWindowBackground}">
     <Grid>
-        <Button Margin="10,17,10,371" 
+        <Button Margin="5,5,5,5" 
                 RenderTransformOrigin="0.5,0.5"
                 Background="Goldenrod"
-                Button.Content="   Add new game "
+                Foreground="{StaticResource MainWindowBackground}"
+                Button.Content="Add new game "
                 Click="ButtonClicked"
-                Name="button1"
+                Name="button1" Height="53" VerticalAlignment="Top"
                 >
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform ScaleY="-1"/>
-                    <SkewTransform/>
-                    <RotateTransform/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
         </Button>
         <ListBox x:Name="GamesListView" 
                   Width="800"
-                  Background="Aquamarine"
-                  Foreground="DarkCyan"
+                  Background="Blue"
+                  Foreground="Wheat"
                   Margin="0,63,0,-16">
 
             <ListBox.ItemTemplate>
@@ -37,10 +30,10 @@
                     <StackPanel Margin="5"
                                 Orientation="Horizontal">
                         <Image Width="150" Height="150" Source="{Binding Path=ImageURL}" />
-                        <TextBlock FontSize="16" Margin="10" Text="{Binding Path=Title}" HorizontalAlignment="Center" />
-                        <TextBlock FontSize="16" Margin="10" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
-                        <TextBlock FontSize="16" Margin="10" Text="{Binding Path=Genre}" HorizontalAlignment="Center" />
-                        <TextBlock FontSize="16" Margin="10" Text="{Binding Path=Description}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="25" Margin="10" Text="{Binding Path=Title}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="25" Margin="10" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="25" Margin="10" Text="{Binding Path=Genre}" HorizontalAlignment="Center" />
+                        <TextBlock FontSize="25" Margin="10" Text="{Binding Path=Description}" HorizontalAlignment="Center" />
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
