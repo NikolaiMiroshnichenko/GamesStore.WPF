@@ -8,35 +8,49 @@
         Title="MainWindow" 
         Height="450" 
         Width="800"
-        Background="{StaticResource MainWindowBackground}">
+        Background="#D6C4BF">
     <Grid>
-        <Button Margin="5,5,5,5" 
-                RenderTransformOrigin="0.5,0.5"
-                Background="Goldenrod"
-                Foreground="{StaticResource MainWindowBackground}"
-                Button.Content="Add new game "
-                Click="ButtonClicked"
-                Name="button1" Height="53" VerticalAlignment="Top"
-                >
-        </Button>
-        <ListBox x:Name="GamesListView" 
-                  Width="800"
-                  Background="Blue"
-                  Foreground="Wheat"
-                  Margin="0,63,0,-16">
-
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Margin="5"
-                                Orientation="Horizontal">
-                        <Image Width="150" Height="150" Source="{Binding Path=ImageURL}" />
-                        <TextBlock FontSize="25" Margin="10" Text="{Binding Path=Title}" HorizontalAlignment="Center" />
-                        <TextBlock FontSize="25" Margin="10" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
-                        <TextBlock FontSize="25" Margin="10" Text="{Binding Path=Genre}" HorizontalAlignment="Center" />
-                        <TextBlock FontSize="25" Margin="10" Text="{Binding Path=Description}" HorizontalAlignment="Center" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+        <ScrollViewer>
+            <StackPanel>
+                <Menu Height="25" 
+              Width="800"
+              VerticalAlignment="Top" 
+              Background="#4444"
+              Margin="0,0,0,5">
+                    <MenuItem Header="Option">
+                        <MenuItem Header="Add new game" 
+                                  Click="AddGameClick"
+                                  Background="#D6C4BF">
+                        </MenuItem>
+                        <MenuItem Header="Exit"
+                                  Click="ExitClick"
+                                  Background="#D6C4BF">
+                        </MenuItem>
+                    </MenuItem>
+                </Menu>
+                <ListBox x:Name="GamesListView" 
+                         Width="800"
+                         Background="#D6C4BF"
+                         ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Orientation="Horizontal"/>                            
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>                          
+                                <StackPanel Margin="5"
+                                            Orientation="Vertical">
+                                    <Image Width="250" Height="230" Source="{Binding Path=ImageURL}" />
+                                    <TextBlock FontSize="15" Margin="5" Text="{Binding Path=Title}" HorizontalAlignment="Center" />
+                                    <TextBlock FontSize="15" Margin="5" Text="{Binding Path=Price}" HorizontalAlignment="Center" />
+                                    <TextBlock FontSize="15" Margin="5" Text="{Binding Path=Genre}" HorizontalAlignment="Center" />
+                                    <TextBlock FontSize="15" Margin="5" Text="{Binding Path=Description}" HorizontalAlignment="Center" />
+                                </StackPanel>                          
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>

@@ -6,20 +6,48 @@
         xmlns:local="clr-namespace:GamesStore.WPF"
         mc:Ignorable="d"
         Title="SubWindow" Height="450" Width="800"
-        Background="{StaticResource MainWindowBackground}">
+        Background="#AD9C98 ">
     <Grid>
         <StackPanel>
-            <TextBlock Foreground="Goldenrod" FontSize="15" Height= "20" Text=" Input name of new game"/>
-            <TextBox Background="Goldenrod" FontSize="15" Height= "20"></TextBox>
-            <TextBlock Foreground="Goldenrod" FontSize="15" Height= "20" Text=" Input genre of new game"/>
-            <TextBox Background="Goldenrod" FontSize="15" Height= "20"></TextBox>
-            <TextBlock Foreground="Goldenrod" FontSize="15" Height= "20" Text=" Input Price of new game"/>
-            <TextBox Background="Goldenrod" FontSize="15" Height= "20"></TextBox>
-            <TextBlock Foreground="Goldenrod" FontSize="15" Height= "20" Text=" Input DeveloperId of new game"/>
-            <TextBox Background="Goldenrod" FontSize="15" Height= "20" ></TextBox>
-            <TextBlock Foreground="Goldenrod" FontSize="15" Height= "20" Text=" Input Description of new game"/>
-            <TextBox Background="Goldenrod" FontSize="15" Height= "20" ></TextBox>
-        </StackPanel> 
-        
+        <StackPanel
+            HorizontalAlignment="Center">
+            <TextBlock Text="Name"
+                       Height="20"/>
+            <TextBox Name="Title"
+                      Height="20" 
+                      Width="150"/>
+            <TextBlock Text="Genre"
+                       Height="20"
+                       Width="150"/>
+            <TextBox Name="Genre"
+                     Height="20"
+                     Width="150"/>
+            <TextBlock Text="Price"
+                       Height="20"
+                       Width="150"/>
+            <TextBox Name="Price"
+                     Height="20"/>
+            <TextBlock Text="Image"
+                       Height="20"
+                       Width="150"/>
+            <TextBox Name="ImageURL"
+                     Height="60"
+                     Width="150"
+                     TextWrapping="Wrap"/>
+            <TextBlock Text="Description"
+                       Height="20"
+                       Width="150"/>
+            <TextBox Name="Description"
+                     Height="60"
+                     Width="150"
+                     TextWrapping="Wrap"/>
+        </StackPanel>
+        <StackPanel
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <Button Content="Save" Click="SaveButtonClick" Margin="10,10,10,10"/>
+            <Button Content="Back" Click="ExitButtonClick" Margin="10,10,10,10"/>
+        </StackPanel>
+        </StackPanel>
     </Grid>
 </Window>

@@ -12,20 +12,26 @@ namespace GamesStore.WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+        private GameService _gameService;
         public MainWindow()
         {
             InitializeComponent();
             var gamesStoreContext = new GamesStoreContext();
 
             var gameRepository = new Repository<Game>(gamesStoreContext);
-            var gameService = new GameService(gameRepository);
-            var list = gameService.GetAll();
+            _gameService = new GameService(gameRepository);
+            var list = _gameService.GetAll();
             GamesListView.ItemsSource = list;
         }
-        private void ButtonClicked(object sender, RoutedEventArgs e)
+        private void AddGameClick(object sender, RoutedEventArgs e)
         {
-            SubWindow subWindow = new SubWindow();
+            SubWindow subWindow = new SubWindow(_gameService);
             subWindow.Show();
+            Close();
+        }
+        private void ExitClick(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
